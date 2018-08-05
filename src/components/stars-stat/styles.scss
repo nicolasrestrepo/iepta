@@ -1,0 +1,11 @@
+@import "../../scss/bootstrap/variables";
+
+ul {
+  li {
+    color: $gray-light;
+
+    &.on {
+      color: $brand-primary;
+    }
+  }
+}

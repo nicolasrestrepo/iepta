@@ -1,0 +1,58 @@
+@import "../../scss/bootstrap/variables";
+@import "../../scss/bootstrap/mixins/shadows";
+
+.product-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr auto;
+
+  background-color: $body-bg;
+  border-radius: $border-radius-base;
+  cursor: pointer;
+  margin: 0.5em 0;
+  overflow: hidden;
+  transition: all ease-out 75ms;
+
+  &:hover {
+    @include shadow(3);
+    transition-duration: 150ms;
+    transition-timing-function: ease-in;
+  }
+
+  figure {
+    grid-column: 1;
+    grid-row: 1;
+    
+    img {
+      height: 200px;
+      width: 100%;
+    }
+  }
+
+  .content {
+    grid-column: 1;
+    grid-row: 2;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+
+    padding: 0 0.7em;
+
+    .title {
+      grid-column: 1 / span 2;
+      grid-row: 1;
+    }
+
+    .stars {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    .price {
+      grid-column: 2;
+      grid-row: 2;
+      text-align: right;
+    }
+  }
+}
